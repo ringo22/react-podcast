@@ -1,0 +1,78 @@
+body {
+	font-family: inherit;
+}
+
+img {
+	width: 100%;
+}
+
+header, form {
+	margin: 20px 0 50px;
+}
+
+.logo-container {
+	margin-bottom: 20px;
+}
+
+.logo-container .logo {
+	width: 100px;
+}
+
+.black {
+	background: #131212;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.podcast-container {
+	margin: 20px 0 0;
+}
+
+.podcast-item {
+	margin-bottom: 20px;
+	padding: 0 10px 0 0!important;
+}
+
+.podcast-item .podcast-image-container {
+	background: #a0a0a0;
+	height: 200px;
+	position: relative;
+	text-align: center;
+}
+
+.podcast-item .podcast-image-container img {
+	width: 100%;
+	height: 100%;
+}
+
+.podcast-item .podcast-image-container img.no-image {
+	margin-top: 10px;
+	width: auto!important;
+	height: 80%!important;
+}
+
+.podcast-item .podcast-image-container .sticker {
+	background: linear-gradient(transparent 50%, black 108%);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.podcast-item .podcast-image-container p {
+	color: #fff;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  font-size: 18px;
+  padding: 20px;
+  text-align: left;
+}
+
+.podcast-item .podcast-audio-container {
+	background: #131212;
+	border-radius: 0 0 5px 5px;
+}

@@ -1,0 +1,42 @@
+{
+  "name": "podcast",
+  "version": "1.0.0",
+  "description": "This is a podcast viewer App.",
+  "main": "app.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com"
+  },
+  "keywords": [
+    "reactjs",
+    "react",
+    "podcast",
+    "nodejs",
+    "node",
+    "html",
+    "js",
+    "javascript"
+  ],
+  "author": "Rodrigo Raya",
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "6.x",
+    "browserify": "^13.0.1",
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-stylus": "^2.5.0",
+    "gulp-webserver": "^0.9.1",
+    "nib": "^1.1.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
+    "react-router": "^2.5.2",
+    "xml2json": "^0.9.1"
+  }
+}
