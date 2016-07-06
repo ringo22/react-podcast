@@ -1,0 +1,32 @@
+{
+  "name": "podcast",
+  "description": "This is a podcast viewer App.",
+  "main": "app.js",
+  "authors": [
+    "Rodrigo Raya"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "reactjs",
+    "react",
+    "podcast",
+    "nodejs",
+    "node",
+    "html",
+    "js",
+    "javascript"
+  ],
+  "homepage": "https://github.com/ringo22/react-podcast",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "build/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

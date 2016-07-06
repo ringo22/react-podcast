@@ -13,9 +13,9 @@ class PodcastData extends React.Component {
 				{this.props.items.map(function(item, index){
 					return <PodcastItem title={item.title}
 															created={item.created}
-															creator={item.creator}
+															creator={item.author}
 															image={item.image}
-															enclosure={item.enclosure}
+															enclosures={item.enclosures}
 					 										key={index} />
       	})}
 			</div>

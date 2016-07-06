@@ -13,18 +13,20 @@ class RequestPodcast extends React.Component {
       status: '',
 			title: '',
 			message: '',
+			podcastInfo: null,
       items: []
     };
   }
 
 	render() {
+		let podcastAuthor = this.state.podcastInfo ? `Autor: ${this.state.podcastInfo.author}` : null
 		return (
 			<div className="row">
         <div className="col-lg-10 col-lg-offset-1">
 
 					<div className="row">
 						<div className="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
-							{ this.state.showNotification ? 
+							{ this.state.showNotification ?
 								<Notification status={this.state.status} title={this.state.title} message={this.state.message} />
 							: null }
 							<form onSubmit={this._handleSubmit.bind(this)}>
@@ -35,7 +37,7 @@ class RequestPodcast extends React.Component {
 						      				placeholder="Ingresa la URL del podcast"
 						      				onChange={this._handleChange.bind(this)} />
 						      <span className="input-group-btn">
-						        <button type="submit" className="btn btn-success">
+						        <button type="submit" id="search-button" className="btn btn-success" data-loading-text="Buscando...">
 											<span className="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar
 										</button>
 						      </span>
@@ -45,10 +47,12 @@ class RequestPodcast extends React.Component {
 					</div>
 					<div className="row">
 						<div className="col-md-12">
+							{this.state.podcastInfo ? <h1>{this.state.podcastInfo.title}</h1> : null}
+							{this.state.podcastInfo ? <span className="label black">{podcastAuthor}</span> : null}
 							<PodcastData items={this.state.items} />
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		)
@@ -65,6 +69,7 @@ class RequestPodcast extends React.Component {
 				status: '',
 				title: '',
 				message: '',
+				podcastInfo: null,
 				items: []
 			})
     } else {
@@ -74,6 +79,7 @@ class RequestPodcast extends React.Component {
     		status: '',
 				title: '',
 				message: '',
+				podcastInfo: null,
 				items: []
     	})
     }
@@ -88,7 +94,7 @@ class RequestPodcast extends React.Component {
     if (!input.value.length > 0) {
     	this.setState({
     		inputClass: 'input-group has-error',
-    		showNotification: true,
+    		showNotification: false,
     		status: 'warning',
 				title: 'Atención',
 				message: 'Debes agregar una URL para buscar un podcast'
@@ -97,7 +103,11 @@ class RequestPodcast extends React.Component {
     	return;
     }
 
+		let btn = $('#search-button').button('loading');
+
     this._getPodcast(input.value, function(err, data) {
+	    btn.button('reset');
+
     	if (err) {
     		me.setState({
     			inputClass: 'input-group',
@@ -105,13 +115,16 @@ class RequestPodcast extends React.Component {
     			status: 'danger',
 					title: 'Upps!',
 					message: 'No se encontro información con respecto al podcast consultado',
+					podcastInfo: null,
 					items: []
-    		})
+    		});
     		return;
     	}
 
     	me.setState({
-    		items: data
+				showNotification: false,
+				podcastInfo: data.meta,
+    		items: data.entries
     	});
 
     	input.value = '';
@@ -119,15 +132,14 @@ class RequestPodcast extends React.Component {
 	}
 
 	_getPodcast(podcastUrl, callback) {
-		let yql = `https://query.yahooapis.com/v1/public/yql?q=select%20title%2Clink%2Cenclosure%2Cdc:creator%2Cdcterms:created%2Citunes:image%2Cdescription%20from%20rss%20where%20url%3D%22${podcastUrl}%3Fformat%3Dxml%22&format=json&diagnostics=true&callback=`
-	    
-		$.getJSON(yql, function(data) {
-			if (!data.query.results) {
-				return callback(true)
-			}
-
-			return callback(null, data.query.results.item)
-		}, "jsonp")
+	  feednami.load(podcastUrl,function(result){
+	    if(result.error){
+	      return callback(true)
+	    }
+	    else{
+				return callback(null, result.feed)
+	    }
+	  })
 	}
 
 }

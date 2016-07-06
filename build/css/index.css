@@ -40,6 +40,7 @@ header, form {
 	height: 200px;
 	position: relative;
 	text-align: center;
+	margin-top: 20px;
 }
 
 .podcast-item .podcast-image-container img {
