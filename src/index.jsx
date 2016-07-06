@@ -7,8 +7,8 @@ import NoMatch from './components/no-match'
 
 render((<Router history={browserHistory}>
     <Route path="/" component={AppHome}>
-    	<IndexRedirect to="/podcast" />
-      <Route path="podcast" component={RequestPodcast}/>
+    	<IndexRedirect to="/#podcast" />
+      <Route path="#podcast" component={RequestPodcast}/>
       <Route path="*" component={NoMatch}/>
     </Route>
   </Router>), document.getElementById('content'))
