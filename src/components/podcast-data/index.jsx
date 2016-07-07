@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import PodcastItem from '../podcast-item';
 
 class PodcastData extends React.Component {
@@ -24,4 +24,4 @@ class PodcastData extends React.Component {
 	}
 }
 
-export default PodcastData
+export default PodcastData;

@@ -10,13 +10,13 @@ class podcastItem extends React.Component {
   }
 
 	render() {
-		let itemClass = ""
+		let itemClass = "";
 		if (!(this.props.image && this.props.image.url)) {
-			itemClass = "no-image"
+			itemClass = "no-image";
 		}
 
 		let enclosure = null;
-		let idAudioItem = `item-${this.props.keyIndex}`
+		let idAudioItem = `item-${this.props.keyIndex}`;
 
 		this.props.enclosures.map(function(item, index){
 			if (item.type == "audio/mpeg") {
@@ -60,8 +60,8 @@ class podcastItem extends React.Component {
 	_handleClick(event) {
 		event.preventDefault();
 
-		let currentSong = document.getElementById(`item-${this.props.keyIndex}`)
-		let allSongs = document.getElementsByClassName('item-song')
+		let currentSong = document.getElementById(`item-${this.props.keyIndex}`);
+		let allSongs = document.getElementsByClassName('item-song');
 
 		if (currentSong.paused) {
 			currentSong.play();

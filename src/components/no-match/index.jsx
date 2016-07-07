@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 class NoMatch extends React.Component {
 	render() {
@@ -13,4 +13,4 @@ class NoMatch extends React.Component {
 	}
 }
 
-export default NoMatch
+export default NoMatch;

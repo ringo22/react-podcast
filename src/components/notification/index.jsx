@@ -1,26 +1,26 @@
-import React from 'react'
+import React from 'react';
 
 class Notification extends React.Component {
 
 	constructor(props) {
-    super(props)
+    super(props);
 
-  	let notificationClass = 'alert'
-  	let notificationTitle = 'Atención'
-  	let notificationMessage = ''
+  	let notificationClass = 'alert';
+  	let notificationTitle = 'Atención';
+  	let notificationMessage = '';
 
   	switch (this.props.status) {
   		case 'info':
-  			notificationClass += ' alert-info'
+  			notificationClass += ' alert-info';
   		break;
   		case 'warning':
-  			notificationClass += ' alert-warning'
+  			notificationClass += ' alert-warning';
   		break;
   		case 'danger':
-  			notificationClass += ' alert-danger'
+  			notificationClass += ' alert-danger';
   		break;
   		default:
-  			notificationClass += ' alert-success'
+  			notificationClass += ' alert-success';
   	}
 
   	this.state = {
@@ -42,4 +42,4 @@ class Notification extends React.Component {
 
 }
 
-export default Notification
+export default Notification;

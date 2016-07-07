@@ -1,10 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React from 'react';
+import { Link } from 'react-router';
 
 class AppHome extends React.Component {
 	render() {
-    let isHome = this.props.location.pathname == '/' ? 'active' : ''
-    let isSearch = this.props.location.pathname == '/search' ? 'active' : ''
+    let isHome = this.props.location.pathname == '/' ? 'active' : '';
+    let isSearch = this.props.location.pathname == '/search' ? 'active' : '';
 
 		return (
       <div>
@@ -26,4 +26,4 @@ class AppHome extends React.Component {
 	}
 }
 
-export default AppHome
+export default AppHome;
