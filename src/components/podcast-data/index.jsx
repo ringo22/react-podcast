@@ -16,6 +16,7 @@ class PodcastData extends React.Component {
 															creator={item.author}
 															image={item.image}
 															enclosures={item.enclosures}
+															keyIndex={index}
 					 										key={index} />
       	})}
 			</div>

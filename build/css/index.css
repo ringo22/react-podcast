@@ -26,6 +26,10 @@ header, form {
 	font-weight: bold;
 }
 
+.show {
+	display: block;
+}
+
 .podcast-container {
 	margin: 20px 0 0;
 }
@@ -35,26 +39,36 @@ header, form {
 	padding: 0 10px 0 0!important;
 }
 
-.podcast-item .podcast-image-container {
-	background: #a0a0a0;
-	height: 200px;
-	position: relative;
+.podcast-item .podcast-content {
+	background: #fff;
+	height: 100px;
 	text-align: center;
 	margin-top: 20px;
+	border: 1px solid #131212;
+	border-bottom: 0px;
+	border-radius: 5px 5px 0 0;
 }
 
-.podcast-item .podcast-image-container img {
+.podcast-item .podcast-content .podcast-image {
+	background: #a0a0a0;
+	float: left;
+	height: 100%;
+	position: relative;
+	width: 100px;
+}
+
+.podcast-item .podcast-content .podcast-image img {
 	width: 100%;
 	height: 100%;
 }
 
-.podcast-item .podcast-image-container img.no-image {
+.podcast-item .podcast-content .podcast-image img.no-image {
 	margin-top: 10px;
 	width: auto!important;
 	height: 80%!important;
 }
 
-.podcast-item .podcast-image-container .sticker {
+.podcast-item .podcast-content .podcast-image .sticker {
 	background: linear-gradient(transparent 50%, black 108%);
   width: 100%;
   position: absolute;
@@ -62,18 +76,27 @@ header, form {
   height: 100%;
 }
 
-.podcast-item .podcast-image-container p {
-	color: #fff;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  font-size: 18px;
-  padding: 20px;
+.podcast-item .podcast-content .podcast-image .sticker img {
+	cursor: pointer;
+	width: 70px;
+	height: 70px;
+	margin: 10px auto 0;
+	display: none;
+}
+
+.podcast-item .podcast-content .podcast-description {
+	float: left;
+  width: 65%;
+}
+
+.podcast-item .podcast-content .podcast-description p {
+  font-size: 14px;
+  padding: 5px;
   text-align: left;
 }
 
 .podcast-item .podcast-audio-container {
 	background: #131212;
+	border: 1px solid #131212;
 	border-radius: 0 0 5px 5px;
 }

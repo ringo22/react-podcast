@@ -48,6 +48,7 @@ class RequestPodcast extends React.Component {
 					<div className="row">
 						<div className="col-md-12">
 							{this.state.podcastInfo ? <h1>{this.state.podcastInfo.title}</h1> : null}
+							{this.state.podcastInfo ? <p>{this.state.podcastInfo.description}</p> : null}
 							{this.state.podcastInfo ? <span className="label black">{podcastAuthor}</span> : null}
 							<PodcastData items={this.state.items} />
 						</div>
@@ -94,7 +95,7 @@ class RequestPodcast extends React.Component {
     if (!input.value.length > 0) {
     	this.setState({
     		inputClass: 'input-group has-error',
-    		showNotification: false,
+    		showNotification: true,
     		status: 'warning',
 				title: 'Atención',
 				message: 'Debes agregar una URL para buscar un podcast'
