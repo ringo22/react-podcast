@@ -22,7 +22,7 @@ class AppHome extends React.Component {
 
         {this.props.children}
       </div>
-		)
+		);
 	}
 }
 

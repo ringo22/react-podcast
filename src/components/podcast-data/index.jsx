@@ -20,7 +20,7 @@ class PodcastData extends React.Component {
 					 										key={index} />
       	})}
 			</div>
-		)
+		);
 	}
 }
 

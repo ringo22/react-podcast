@@ -9,7 +9,7 @@ class NoMatch extends React.Component {
     			Esta pagia no existe
   			</p>
 			</div>
-		)
+		);
 	}
 }
 

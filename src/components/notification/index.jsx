@@ -37,7 +37,7 @@ class Notification extends React.Component {
         <br />
         {this.state.message}
   		</div>
-		)
+		);
   }
 
 }

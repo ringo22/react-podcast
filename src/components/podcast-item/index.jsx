@@ -22,7 +22,7 @@ class podcastItem extends React.Component {
 			if (item.type == "audio/mpeg") {
 				enclosure = item;
 			}
-		})
+		});
 
 		return (
 			<div className="podcast-item col-lg-4 col-md-4 col-sm-6">
